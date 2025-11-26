@@ -5,10 +5,15 @@ const SIGNALING_SERVER_URL = 'https://nymphean-brigid-immethodically.ngrok-free.
 
 const ICE_SERVERS = {
   iceServers: [
-    { urls: 'stun:stun.l.google.com:19302' },
-    // you can add more STUNs or TURN servers here for reliability
+    { urls: "stun:stun.l.google.com:19302" },
+    {
+      urls: "turn:global.relay.metered.ca:443",
+      username: "Zr0Tw2Yt0b94y5RqGtwz9yq5J54ZQeEo",
+      credential: "JgXCa5t4tQ9N2Oe80N++z26V7x0="
+    }
   ]
 };
+
 
 export default function Room({ roomId, name, onLeave }) {
   const localVideoRef = useRef();
